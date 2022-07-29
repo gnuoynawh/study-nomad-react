@@ -1,1 +1,1 @@
-# study-react-movie
+# study-nomad-react
