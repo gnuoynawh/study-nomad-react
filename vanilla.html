@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <div id="root"></div>
+        <span>Total clicks: 0</span>
+        <button id="btn">CLick me</button>
     </body>
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-
+    
     <script>
-        const root = document.getElementById("root");
-        const span = React.createElement(
-            "span", 
-            { id:"sexy-span", style: {color: "red"} }, 
-            "Hello I'm a span"
-        );
-        ReactDom.render(span, root);
+        let counter = 0;
+        const button = document.getElementById("btn");
+        const span = document.querySelector("span");
+        function handleClick() {
+            counter = counter + 1;
+            span.innerText = `Total clicks: ${counter}`;
+        }
+        button.addEventListener("click", handleClick);
+
     </script>
 </html>
-
-<!-- 
--->
