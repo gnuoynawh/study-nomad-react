@@ -16,6 +16,55 @@
 
     <script type="text/babel">
         const root = document.getElementById("root");
+        let counter = 0;
+
+        function App() {
+            const [counter, modifier] = React.useState(0);
+
+            return (
+                <div>
+                    <h3>Total clicks: {counter}</h3>
+                    <button>Click me</button>
+                </div>
+            );
+        }
+        
+        ReactDOM.render(<App />, root);
+    </script>
+</html> 
+
+<!-- 444
+
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        let counter = 0;
+
+        function countUp() {
+            counter = counter + 1;
+            render();
+        }
+
+        function render() {
+            ReactDOM.render(<Container />, root);
+        }
+
+        function Container() {
+            return (
+                <div>
+                    <h3>Total clicks: {counter}</h3>
+                    <button onClick={countUp}>Click me</button>
+                </div>
+            );
+        }
+        
+        render();
+    </script>
+-->
+
+<!-- 333
+
+    <script type="text/babel">
+        const root = document.getElementById("root");
         function Title() {
             return (
                 <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
@@ -40,13 +89,11 @@
             </div>
         );
         
-        ReactDom.render(Container, root);
+        ReactDOM.render(Container, root);
     </script>
-</html> 
+-->
 
-
-<!-- 
-    222
+<!-- 222
 
     <script>
         const root = document.getElementById("root");
@@ -67,15 +114,12 @@
         );
         const container = React.createElement("div", null, [h3, btn]);
         
-        ReactDom.render(container, root);
+        ReactDOM.render(container, root);
     </script>
 
 -->
 
-
-
-<!-- 
-    111
+<!-- 111
 
     <script>
         const root = document.getElementById("root");
@@ -84,6 +128,6 @@
             { id:"sexy-span", style: {color: "red"} }, 
             "Hello I'm a span"
         );
-        ReactDom.render(span, root);
+        ReactDOM.render(span, root);
     </script>
 -->
