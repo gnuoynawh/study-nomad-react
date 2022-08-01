@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+
+    <!--
+        add react : https://reactjs.org/docs/add-react-to-a-website.html
+        babel (jsx) : https://babeljs.io/docs/en/
+    -->
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function Title() {
+            return (
+                <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+                    Hello I'm a title    
+                </h3>
+            );
+        }
+        
+        const Button = () => (
+            <button
+                style={{
+                    backgroundColor: "tomato"
+                }}
+                onclick={() => console.log("im clicked")}>
+            </button>
+        );
+
+        const Container = (
+            <div>
+                <Title/> 
+                <Button/>
+            </div>
+        );
+        
+        ReactDom.render(Container, root);
+    </script>
+</html> 
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <script>
+        const root = document.getElementById("root");
+        const h3 = React.createElement(
+            "h3", 
+            {
+                id: "title",
+                onMouseEnter: () => console.log("mouse enter"),
+            }, 
+            "Hello I'm a span"
+        );
+        const btn = React.createElement(
+            "button", 
+            {
+                    onclick: () => console.log("im clicked"),
+            }, 
+            "Click me"
+        );
+        const container = React.createElement("div", null, [h3, btn]);
+        
+        ReactDom.render(container, root);
+    </script>
+</html>  
+
+-->
+
+
+
+<!-- 
+
+first
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <span>Total clicks: 0</span>
+        <button id="btn">CLick me</button>
+    </body>
+    
+    <script>
+        let counter = 0;
+        const button = document.getElementById("btn");
+        const span = document.querySelector("span");
+        function handleClick() {
+            counter = counter + 1;
+            span.innerText = `Total clicks: ${counter}`;
+        }
+        button.addEventListener("click", handleClick);
+
+    </script>
+</html> 
+-->
