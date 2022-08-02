@@ -9,7 +9,8 @@
     </body>
 
     <!--
-        - 바벨로 만든 엘리멘트와 이벤트에 대해, 리렌더링 하는 방법
+        - state 의 Setter 함수에 값을 넣을때 
+          함수형태로 값을 넣을수있음.
     -->
 
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
@@ -20,24 +21,21 @@
         const root = document.getElementById("root");
         let counter = 0;
 
-        function countUp() {
-            counter = counter + 1;
-            render();
-        }
+        function App() {
+            const [counter, setCounter] = React.useState(0);
+            const onClick = () => {
+                //setCounter(counter + 1);
+                setCounter((current) => current + 1);
+            }
 
-        function render() {
-            ReactDOM.render(<Container />, root);
-        }
-
-        function Container() {
             return (
                 <div>
                     <h3>Total clicks: {counter}</h3>
-                    <button onClick={countUp}>Click me</button>
+                    <button onClick={onClick}>Click me</button>
                 </div>
             );
         }
         
-        render();
+        ReactDOM.render(<App />, root);
     </script>
-</html> 
+</html>
